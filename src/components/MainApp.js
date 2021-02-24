@@ -1,0 +1,19 @@
+import React, { useState } from 'react'
+import styles from '../components/css/styles.css'
+import { AppRouter } from './AppRouter'
+import { UserContext } from './UserContext'
+
+export const MainApp = () => {
+
+    const [user , setUser] = useState({ });
+  
+
+    return (
+            <UserContext.Provider value = { {
+                user: user,
+                setUser
+            } }>
+                <AppRouter />
+            </UserContext.Provider>
+    )
+}
